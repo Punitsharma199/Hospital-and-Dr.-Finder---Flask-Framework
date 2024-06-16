@@ -1,0 +1,49 @@
+{% extends 'welcome.html'%}
+{% block m1 %}
+<html>
+<head>
+<link href="../static/css/general.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="c">
+<h1 class="a1"> Hospital Data </h1>
+<br/>
+{% if vgt %}
+    {% for d in vgt %}
+        <h3 class="a2">{{d[0]}}</h3>
+        <p class="a3">
+            l_no. : {{d[1]}}<br>
+            address : {{d[2]}}<br>
+            contact : {{d[3]}}<br>
+            emergency : {{d[4]}}<br>
+            general_beds : {{d[5]}}<br>
+            a.c_beds : {{d[6]}}<br>
+            email : {{d[7]}}<br>
+        <p/>
+       <!-- <table>
+            <tr>
+                <td>
+                    <form method="POST" action="edit_hospital_data">
+                        <input type="hidden" name="H1" value="{{d[7]}}">
+                        <input type="submit" value="edit">
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="delete_hospital_data">
+                        <input type="hidden" name="H1" value="{{d[7]}}">
+                        <input type="submit" value="delete">
+                    </form>
+                </td>
+            </tr>
+        </table>-->
+
+<hr/>
+    {% endfor %}
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+</body>
+</html>
+
+{% endblock %}

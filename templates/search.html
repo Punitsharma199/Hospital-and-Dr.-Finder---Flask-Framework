@@ -1,0 +1,70 @@
+{% extends 'welcome.html' %}
+
+{% block m1 %}
+
+    <form method="post">
+        <p>Speciality
+            <select name="T1">
+                <option></option>
+                <option>Cardiologist</option>
+                <option>Cardiovascular Surgeon</option>
+                <option>Dentist</option>
+                <option>Emergency Doctors</option>
+                <option>ENT Specialist</option>
+                <option>Gastroenterologist</option>
+                <option>General Psychiatrist</option>
+            </select>
+        </p>
+        <p><input type="submit" name="B1" value="Search"/> </p>
+    </form>
+{% if result %}
+    {% for row in result %}
+        <table>
+            <tr>
+            <td width="33%" style="...">
+                Name : {{ row[0] }}<br/>
+                Address : {{ row[1] }}<br/>
+                Contact : {{ row[2] }}<br/>
+                Speciality : {{ row[3] }}<br/>
+                Current hospital : {{ row[4] }}<br/>
+                Work experience : {{ row[5] }}<br/>
+            </td>
+            <td width="33%" style="...">
+                days : {% if row[6]=="yes" %}
+                mon
+            {% endif %}
+            {% if row[7]=="yes" %}
+                tues
+            {% endif %}
+            {% if row[8]=="yes" %}
+                wed
+            {% endif %}
+            {% if row[9]=="yes" %}
+                thu
+            {% endif %}
+            {% if row[10]=="yes" %}
+                fri
+            {% endif %}
+            {% if row[11]=="yes" %}
+                sat
+            {% endif %}
+            {% if row[12]=="yes" %}
+                sun
+            {% endif %}<br/>
+                Timing : {{ row[13] }}<br/>
+                Email : {{ row[14] }}<br/>
+
+
+            </td>
+           <!-- <td width="33%">
+                <img alt="No photo" src="../static/photos/{{ row[15] }}" width="200" height="100"/>
+            </td>-->
+            </tr>
+
+        </table>
+
+    {% endfor %}
+{% endif %}
+
+
+{% endblock %}

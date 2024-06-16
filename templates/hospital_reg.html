@@ -1,0 +1,22 @@
+<h1>Hospital Reg</h1>
+<form id="form1" method="POST" action="hospital_reg">
+    <p>Name<input type="text" id="txt1" name="T1"></p>
+    <p>Licence Number<input type="text" id="txt2" name="T2"></p>
+    <p>Address<input type="text" id="txt3" name="T3"></p>
+    <p>Contact<input type="text" id="txt4" name="T4"></p>
+    <p>Emergency
+        <input type="radio" id="txt5" name="T5" value="Y"/>Y
+        <input type="radio" id="txt11" name="T5" value="N"/>N
+    </p>
+    <p>Genral Beds<input type="text" id="txt6" name="T6"></p>
+    <p>A.C Beds<input type="text" id="txt7" name="T7"></p>
+    <p>Email<input type="text" id="txt8" name="T8"></p>
+    <p>Password<input type="text" id="txt9" name="T9"></p>
+    <p>Confirm password<input type="text" id="txt10" name="T10"></p>
+
+    <button value="submit" id="btn1" name="B1">Register</button>
+</form>
+
+{% if vgt %}
+    <h2>{{vgt}}</h2>
+{% endif %}

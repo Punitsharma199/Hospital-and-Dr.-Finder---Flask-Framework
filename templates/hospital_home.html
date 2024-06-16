@@ -1,0 +1,107 @@
+{% extends "h1.html" %}
+{% block punit %}
+
+<h1>Welcome to Hospital Block</h1><br>
+<table>
+    <tr>
+        <td width="33%" style="...">
+{% if photo=="no" %}
+    <p><a href="hospital_photo">Upload Photo</a> </p>
+{% else %}
+    <img src="../static/photos/{{ photo }}" width="150" height="100" />
+    <br/>
+            <br/>
+
+    <p><a style="width:450px;
+		color:#FFF;
+		border-radius:15px;
+		background-color:#000;
+		padding:5px;
+		text-decoration:none;" href="change_hospital_photo">Change Photo</a> </p>
+{% endif %}
+        </td>
+        <td width="33%" style="...">
+{% if punit %}
+        <h3>{{punit[0]}}</h3>
+        <p>
+            Licence no. : {{punit[1]}}<br/>
+            Address : {{punit[2]}}<br/>
+            Contact : {{punit[3]}}<br/>
+            Emergency : {{punit[4]}}<br/>
+            General Beds : {{punit[5]}}<br/>
+            A.c. Beds : {{punit[6]}}<br/>
+            Email : {{punit[7]}}<br/>
+        </p>
+
+                <form method="POST" action="edit_hospital_data">
+                    <input type="hidden" name="H1" value="{{punit[7]}}"/>
+                    <input type="submit" value="Edit"/>
+                </form>
+{% endif %}
+        </td>
+
+
+    </tr>
+
+</table>
+
+{% if msg %}
+    <h3>{{ msg  }}</h3>
+{% endif %}
+<hr/>
+<h1>Doctor's List</h1><br/>
+{% if doctors %}
+    {% for d in doctors %}
+         <h4>{{d[0]}}</h4>
+        <p>
+            address : {{d[1]}}<br>
+            contact : {{d[2]}}<br>
+            speciality : {{d[3]}}<br>
+            current hospital : {{d[4]}}<br>
+            work_experience : {{d[5]}}<br>
+            days : {% if d[6]=="yes" %}
+                mon
+            {% endif %}
+            {% if d[7]=="yes" %}
+                tues
+            {% endif %}
+            {% if d[8]=="yes" %}
+                wed
+            {% endif %}
+            {% if d[9]=="yes" %}
+                thu
+            {% endif %}
+            {% if d[10]=="yes" %}
+                fri
+            {% endif %}
+            {% if d[11]=="yes" %}
+                sat
+            {% endif %}
+            {% if d[12]=="yes" %}
+                sun
+            {% endif %}<br/>
+            timing : {{d[13]}}<br>
+            email : {{d[14]}}
+        </p>
+       <table>
+            <tr>
+                <td>
+                    <form method="POST" action="edit_doctor_data">
+                        <input type="hidden" name="H1" value="{{d[15]}}">
+                        <input type="submit" value="edit">
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="delete_doctor_data">
+                        <input type="hidden" name="H1" value="{{d[15]}}">
+                        <input type="submit" value="delete">
+                    </form>
+                </td>
+            </tr>
+        </table>
+    {% endfor %}
+{% endif %}
+
+
+{% endblock %}
+

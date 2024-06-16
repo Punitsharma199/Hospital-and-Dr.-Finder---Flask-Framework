@@ -1,0 +1,45 @@
+{% extends "a1.html" %}
+{% block punit %}
+
+<h1>Welcome to Admin Home</h1>
+<table>
+    <tr>
+        <td  width="33%" style="...">
+{% if photo=='no' %}
+    <p><a href="admin_photo">Upload Photo</a> </p>
+{% else %}
+    <img src="../static/photos/{{ photo }}" width="150" height="100" />
+    <br/>
+            <br/>
+    <p><a style="width:450px;
+		color:#FFF;
+		border-radius:15px;
+		background-color:#000;
+		padding:5px;
+		text-decoration:none;" href="change_admin_photo">Change Photo</a> </p>
+{% endif %}
+        </td>
+        <td  width="33%" style="...">
+{% if punit %}
+        <h3>{{punit[0]}}</h3>
+        <p>
+            address : {{punit[1]}}<br/>
+            contact : {{punit[2]}}<br/>
+            email : {{punit[3]}}
+        </p>
+              <form method="POST" action="edit_admin">
+                    <input type="hidden" name="H1" value="{{punit[3]}}"/>
+                    <input type="submit" value="Edit"/>
+                </form>
+
+
+{% endif %}
+        </td>
+    </tr>
+</table>
+
+
+
+
+
+{% endblock %}

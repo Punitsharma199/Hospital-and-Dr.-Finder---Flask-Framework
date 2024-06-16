@@ -1,0 +1,105 @@
+<html>
+<head>
+    <style>
+        .a1
+        {
+            color:#039;
+
+	        font-family:Tahoma, Geneva, sans-serif;
+	        width:240px;
+
+        }
+        .a2
+        {
+             color:#022;
+
+	        font-family:Tahoma, Geneva, sans-serif;
+	        width:150px;
+
+        }
+        .a3
+        {
+            color:#000;
+	        font-family:Tahoma, Geneva, sans-serif;
+        }
+        .a4
+        {
+            color:#000;
+            background-color:#FFF;
+
+        }
+        .c
+        {
+            background-color:#3FF;
+        }
+    </style>
+</head>
+<body class="c">
+<h1 class="a1">Admin Data</h1>
+<br/>
+{% if vgt %}
+    {% for d in vgt %}
+        <h3 class="a2">{{d[0]}}</h3>
+        <p class="a3">
+            address : {{d[1]}}<br/>
+            contact : {{d[2]}}<br/>
+            email : {{d[3]}}
+        </p>
+
+        <table>
+            <tr>
+                <td>
+                    <form  method="POST" action="edit_admin">
+                        <input type="hidden" name="H1" value="{{d[3]}}"/>
+                        <input class="a4" type="submit" value="Edit" />
+                    </form>
+                </td>
+                <td>
+                    <form  method="POST" action="delete_admin">
+                        <input type="hidden" name="H1" value="{{d[3]}}"/>
+                        <input class="a4" type="submit" value="Delete" />
+                    </form>
+                </td>
+            </tr>
+        </table>
+    {% endfor %}
+
+<hr/>
+<!--
+<table cellspacing="0"  border="1" width="100%">
+    <tr>
+        <th>Name</th>
+        <th>Address</th>
+        <th>contact</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    {% for d in vgt %}
+        <tr>
+            <td>{{d[0]}}</td>
+            <td>{{d[1]}}</td>
+            <td>{{d[2]}}</td>
+            <td>{{d[3]}}</td>
+            <td>
+                <form method="POST" action="edit_admin">
+                    <input type="hidden" name="H1" value="d{{[3]}}"/>
+                    <input type="submit" value="Edit"/>
+                </form>
+            </td>
+            <td>
+                <form method="POST" action="delete_admin">
+                    <input type="hidden" name="H1" value="d{{[3]}}"/>
+                    <input type="submit" value="Delete"/>
+                </form>
+            </td>
+        </tr>
+ {% endfor %}
+</table>
+-->
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+    </body>
+</html>

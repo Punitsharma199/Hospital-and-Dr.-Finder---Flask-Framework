@@ -1,0 +1,66 @@
+<html>
+<head>
+<link href="../static/css/general.css" rel="stylesheet" type="text/css"/>
+</head>
+<body class="c">
+<h1 class="a1">Doctor's Data</h1>
+<br/>
+{% if vgt %}
+    {% for d in vgt %}
+        <h3 class="a2">{{d[0]}}</h3>
+        <p class="a3">
+            address : {{d[1]}}<br>
+            contact : {{d[2]}}<br>
+            speciality : {{d[3]}}<br>
+            current hospital : {{d[4]}}<br>
+            work_experience : {{d[5]}}<br>
+            days :
+            {% if d[6]=="yes" %}
+                mon
+            {% endif %}
+            {% if d[7]=="yes" %}
+                tues
+            {% endif %}
+            {% if d[8]=="yes" %}
+                wed
+            {% endif %}
+            {% if d[9]=="yes" %}
+                thu
+            {% endif %}
+            {% if d[10]=="yes" %}
+                fri
+            {% endif %}
+            {% if d[11]=="yes" %}
+                sat
+            {% endif %}
+            {% if d[12]=="yes" %}
+                sun
+            {% endif %}<br/>
+            timing : {{d[13]}}<br>
+            email : {{d[14]}}
+        </p>
+       <table>
+            <tr>
+                <td>
+                    <form method="POST" action="edit_doctor_data">
+                        <input type="hidden" name="H1" value="{{d[15]}}">
+                        <input class="a4" type="submit" value="edit">
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="delete_doctor_data">
+                        <input type="hidden" name="H1" value="{{d[15]}}">
+                        <input class="a4" type="submit" value="delete">
+                    </form>
+                </td>
+            </tr>
+        </table>
+<hr/>
+    {% endfor %}
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+
+</body>
+</html>

@@ -1,0 +1,35 @@
+@charset "utf-8";
+/* CSS Document */
+
+.a1
+        {
+            color:#039;
+
+	        font-family:Tahoma, Geneva, sans-serif;
+	        width:240px;
+
+        }
+        .a2
+        {
+             color:#022;
+
+	        font-family:Tahoma, Geneva, sans-serif;
+	        width:150px;
+
+        }
+        .a3
+        {
+            color:#000;
+	        font-family:Tahoma, Geneva, sans-serif;
+        }
+        .a4
+        {
+            color:#000;
+            background-color:#FFF;
+
+        }
+        .c
+        {
+            background-color:#3FF;
+        }
+    

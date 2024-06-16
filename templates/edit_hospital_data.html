@@ -1,0 +1,18 @@
+<h1>Edit and save</h1>
+{% if vgt %}
+        <form method="POST" action="edit_hospital_data1">
+             <p>name:<input value="{{vgt[0]}}" type="text" id="txt1" name="T1"></p>
+             <p>l_no.:<input value="{{vgt[1]}}" type="text" id="txt2" name="T2"></p>
+             <p>address:<input value="{{vgt[2]}}" type="text" id="txt3" name="T3"></p>
+             <p>contact:<input value="{{vgt[3]}}" type="text" id="txt4" name="T4"></p>
+             <p>emergency:<input value="{{vgt[4]}}" type="text" id="txt5" name="T5"></p>
+             <p>genral_beds:<input value="{{vgt[5]}}" type="text" id="txt6" name="T6"></p>
+             <p>a.c_beds:<input value="{{vgt[6]}}" type="text" id="txt7" name="T7"></p>
+             <p>email:<input value="{{vgt[7]}}" type="text" id="txt8" name="T8"></p>
+
+             <button type="submit" id="btn1" name="B1">Save changes</button>
+
+        </form>
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}

@@ -1,0 +1,18 @@
+<h1>Delete and Save</h1>
+{% if vgt %}
+
+<form method="POST" action="delete_hospital_data1">
+    <p>name:<input type="text" id="txt1" name="T1" value="{{vgt[0]}}"/></p>
+    <p>l_no.:<input type="text" id="txt2" name="T2" value="{{vgt[1]}}"/></p>
+    <p>address:<input type="text" id="txt3" name="T3" value="{{vgt[2]}}"/></p>
+    <p>contact:<input type="text" id="txt4" name="T4" value="{{vgt[3]}}"/></p>
+    <p>emergency:<input type="text" id="txt5" name="T5" value="{{vgt[4]}}"/></p>
+    <p>genral_beds:<input type="text" id="txt6" name="T6" value="{{vgt[5]}}"/></p>
+    <p>a.c_beds:<input type="text" id="txt7" name="T7" value="{{vgt[6]}}"/></p>
+    <p>email:<input type="text" id="txt8" name="T8" value="{{vgt[7]}}"/></p>
+    <button type="submit" id="btn1" name="B1">Delete</button>
+</form>
+
+{% elif msg %}
+    <h3>{{ msg }}</h3>
+{% endif %}

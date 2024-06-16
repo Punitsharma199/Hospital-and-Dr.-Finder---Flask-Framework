@@ -1,0 +1,14 @@
+<h1>Edit and save</h1>
+{% if vgt %}
+
+<form method="POST" action="edit_admin1">
+    <p>name:<input value="{{vgt[0]}}" type="text" id="txt1" name="T1"></p>
+    <p>address:<input value="{{vgt[1]}}" type="text" id="txt2" name="T2"></p>
+    <p>contact:<input value="{{vgt[2]}}" type="text" id="txt3" name="T3"></p>
+    <p>edit:<input value="{{vgt[3]}}" type="text" id="txt4" name="T4"></p>
+    <button type="submit" id="btn1" name="B1">Save changes</button>
+</form>
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}

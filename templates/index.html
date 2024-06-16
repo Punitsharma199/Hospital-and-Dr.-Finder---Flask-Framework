@@ -1,0 +1,37 @@
+{% extends 'welcome.html' %}
+
+{% block m1 %}
+<html>
+<head>
+<link href="../static/css/general.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<h1 class="a1">Welcome to Doctor Finder</h1>
+<hr />
+{% if result %}
+
+{% for row in result %}
+<table width="100%">
+    <tr>
+        <td width="33%">
+        <img alt="No Photo" src="../static/photos/{{ row[9] }}" width="200" height="100" />
+    <h4> {{ row[0] }}</h4>
+        </td>
+        <td width="33%">
+    <p>
+        Address : {{ row[2] }}<br />
+        Contact : {{ row[3] }}<br />
+        Email : {{ row[7] }}
+    </p>
+        </td>
+    </tr>
+</table>
+    <hr/>
+{% endfor %}
+
+{% elif msg %}
+    <h3>{{msg}}</h3>
+{% endif %}
+</body>
+</html>
+{% endblock %}

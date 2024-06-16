@@ -1,0 +1,62 @@
+<h1>Delete and Save</h1>
+{% if vgt %}
+
+<form method="POST" action="delete_doctor_data1">
+    <p>Name:<input type="text" id="txt1" name="T1" value="{{vgt[0]}}"></p>
+    <p>Address:<input type="text" id="txt2" name="T2" value="{{vgt[1]}}"></p>
+    <p>Contact:<input type="text" id="txt3" name="T3" value="{{vgt[2]}}"></p>
+    <p>Speciality:<input type="text" id="txt4" name="T4" value="{{vgt[3]}}"></p>
+    <p>Current hospital:<input type="text" id="txt5" name="T5" value="{{vgt[4]}}"></p>
+    <p>Work experience:<input type="text" id="txt6" name="T6" value="{{vgt[5]}}"></p>
+    <p>days:
+         {% if vgt[6]=='yes' %}
+                 mon<input checked type="checkbox" id="txt7" name="T7" value="mon">
+                 {% else %}
+                 mon<input type="checkbox" id="txt10" name="T7" value="mon">
+                 {% endif %}
+
+                 {% if vgt[7]=='yes' %}
+                 tues<input checked type="checkbox" id="txt11" name="T7" value="tues">
+                 {% else %}
+                 tues<input type="checkbox" id="txt12" name="T7" value="tues">
+                 {% endif %}
+
+                 {% if vgt[8]=='yes' %}
+                 wed<input checked type="checkbox" id="txt13" name="T7" value="wed">
+                 {% else %}
+                 wed<input type="checkbox" id="txt14" name="T7" value="wed">
+                 {% endif %}
+
+                 {% if vgt[9]=='yes' %}
+                 thu<input checked type="checkbox" id="txt15" name="T7" value="thu">
+                 {% else %}
+                 thu<input type="checkbox" id="txt16" name="T7" value="thu">
+                 {% endif %}
+
+                 {% if vgt[10]=='yes' %}
+                 fri<input checked type="checkbox" id="txt17" name="T7" value="fri">
+                 {% else %}
+                 fri<input type="checkbox" id="txt18" name="T7" value="fri">
+                 {% endif %}
+
+                 {% if vgt[11]=='yes' %}
+                 sat<input checked type="checkbox" id="txt19" name="T7" value="sat">
+                 {% else %}
+                 sat<input type="checkbox" id="txt20" name="T7" value="sat">
+                 {% endif %}
+
+                 {% if vgt[12]=='yes' %}
+                 sun<input checked type="checkbox" id="txt21" name="T7" value="sun">
+                 {% else %}
+                 sun<input type="checkbox" id="txt22" name="T7" value="sun">
+                 {% endif %}
+
+    </p>
+    <p>Timing:<input type="text" id="txt8" name="T8" value="{{vgt[13]}}"></p>
+    <p>Email:<input type="text" id="txt9" name="T9" value="{{vgt[14]}}"></p>
+    <p>doctor_id<input type="text" id="txt23" name="T10" value="{{vgt[15]}}"></p>
+    <button type="submit" name="B1" id="Btn1">Delete</button>
+</form>
+{% elif msg %}
+    <h3>{{ msg }}</h3>
+{% endif %}

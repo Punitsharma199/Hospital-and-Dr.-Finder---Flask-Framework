@@ -1,0 +1,38 @@
+<h1>Doctor Registration</h1>
+<form id="form1" action="doctor_reg" method="POST">
+    <p>Name:<input type="text" id="txt1" name="T1"></p>
+    <p>Address:<input type="text" id="txt2" name="T2"></p>
+    <p>Contact:<input type="text" id="txt3" name="T3"></p>
+
+    <p>Speciality:
+        <select id="txt4" name="T4">
+                <option>Cardiologist</option>
+                <option>Cardiovascular Surgeon</option>
+                <option>Dentist</option>
+                <option>Emergency Doctors</option>
+                <option>ENT Specialist</option>
+                <option>Gastroenterologist</option>
+                <option>General Psychiatrist</option>
+
+    </select></p>
+    <p>Current Hospital:<input type="text" id="txt5" name="T5"></p>
+    <p>Work experience:<input type="text" id="txt6" name="T6"></p>
+    <p>Days:
+        <input type="checkbox" id="txt7" name="T7" value="mon">Monday
+        <input type="checkbox" id="txt10" name="T7" value="tues">Tuesday
+        <input type="checkbox" id="txt11" name="T7" value="wed"> Wednesday
+        <input type="checkbox" id="txt12" name="T7" value="thu">thursday
+        <input type="checkbox" id="txt13" name="T7" value="fri">Friday
+        <input type="checkbox" id="txt14" name="T7" value="sat">Saturday
+        <input type="checkbox" id="txt15" name="T7" value="sun">sunday
+
+    </p><br>
+
+    <p>Timing:<input type="text" id="txt8" name="T8"></p>
+    <p>Email:<input type="text" id="txt9" name="T9"></p>
+    <button id="btn1" value="submit" name="B1">Register</button>
+
+</form>
+{% if vgt %}
+<h3>{{vgt}}</h3>
+{% endif %}

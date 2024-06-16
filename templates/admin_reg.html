@@ -1,0 +1,26 @@
+<h1>Admin Reg</h1>
+<form id="form1" method="post" action="admin_reg">
+    <p>Name
+        <input type="text" name="T1" id="txt1">
+    </p>
+    <p>Address
+        <input type="text" name="T2" id="txt2">
+    </p>
+    <p>Contact
+        <input type="text" name="T3" id="txt3">
+    </p>
+    <p>Email
+        <input type="text" name="T4" id="txt4">
+    </p>
+    <p>Password
+        <input type="text" name="T5" id="txt5">
+    </p>
+    <p>Confirm Password
+        <input type="text" name="T6" id="txt6">
+    </p>
+    <button value="submit" name="B" id="Btn1">Register</button>
+</form>
+
+{% if vgt %}
+    <h2>{{vgt}}</h2>
+{% endif %}
